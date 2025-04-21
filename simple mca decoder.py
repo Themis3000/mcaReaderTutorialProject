@@ -25,5 +25,7 @@ for chunk_offset in chunk_offsets:
 
     chunk_uncompressed = zlib.decompress(chunk_bytes)
     chunks.append(chunk_uncompressed)
+f.close()
 
-print(chunks)
+with open("chunk.nbt", "wb") as f:
+    f.write(chunks[0])
